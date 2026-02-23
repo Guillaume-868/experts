@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -7,6 +7,111 @@
 @source "../**/*.vue";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+/* ===================== */
+/* RESET GLOBAL */
+/* ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===================== */
+/* HEADER */
+/* ===================== */
+header.home {
+    background-color: #04163c;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    position: relative;
+}
+
+/* LOGO AVENTURA */
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: clamp(200px, 12vw, 250px);
+    height: auto;
+}
+
+/* MENU BURGER */
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.burger {
+    width: 40px;
+    cursor: pointer;
+    display: block; /* visible sur mobile */
+}
+
+/* MENU BURGER MOBILE - caché par défaut */
+header.home nav {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    width: 50%;
+    background-color: rgba(4, 22, 60, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Caché par défaut */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    border-radius: 18px;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+/* Menu visible au clic */
+header.home nav.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+/* MENU ITEMS */
+header.home nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+/* Customize the links  */
+header.home nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition:
+        background-color 0.2s,
+        color 0.2s;
+}
+
+/* style “hover” mobile au clic */
+header.home nav li a.active {
+    background-color: #ffffff;
+    color: #04163c;
 }
