@@ -14,6 +14,23 @@
 }
 
 /* ===================== */
+/* FONTS*/
+/* ===================== */
+@font-face {
+    font-family: "Frunchy Sage";
+    src: url("/fonts/frunchy_sage/frunchy.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Frunchy Sage_secondary";
+    src: url("/fonts/frunchy_sage/frunchy.ttf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* ===================== */
 /* RESET GLOBAL */
 /* ===================== */
 * {
@@ -53,10 +70,10 @@ header.home {
 .burger {
     width: 40px;
     cursor: pointer;
-    display: block; /* visible sur mobile */
+    display: block; /* visible on mobile */
 }
 
-/* MENU BURGER MOBILE - caché par défaut */
+/* MENU BURGER MOBILE - hidden by default */
 header.home nav {
     position: absolute;
     top: 100%;
@@ -70,7 +87,7 @@ header.home nav {
     flex-direction: column;
     align-items: center;
 
-    /* Caché par défaut */
+    /* hidden by default */
     opacity: 0;
     pointer-events: none;
     transition: all 0.25s ease;
@@ -79,7 +96,7 @@ header.home nav {
     z-index: 1000;
 }
 
-/* Menu visible au clic */
+/* Menu visible when .show class is added */
 header.home nav.show {
     opacity: 1;
     pointer-events: auto;
@@ -110,8 +127,45 @@ header.home nav li a {
         color 0.2s;
 }
 
-/* style “hover” mobile au clic */
+/* style for active link */
 header.home nav li a.active {
     background-color: #ffffff;
     color: #04163c;
+}
+
+/* ===================== */
+/* MAIN CONTENT */
+/* ===================== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.presentation {
+    width: 100%;
+    height: 30vh; /* hauteur en % de l’écran */
+    max-height: 70vh;
+    min-height: 20vh;
+
+    background-size: cover;
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.presentation h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: "Frunchy Sage";
 }
