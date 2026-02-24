@@ -1,5 +1,6 @@
 import "./bootstrap";
 import { initBurgerMenu } from "./menu-burger.js";
+import { carousel } from "./carousel.js";
 
 initBurgerMenu();
 
@@ -14,3 +15,5 @@ links.forEach((link) => {
         link.classList.add("active");
     });
 });
+
+carousel();

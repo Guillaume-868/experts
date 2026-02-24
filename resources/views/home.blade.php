@@ -35,18 +35,48 @@
 
     <main class="primary">
         <section class="presentation" style="background-image: url('{{ asset('images/stranger-things.jpg') }}');">
-            <h1>O3 Aventura</h1>
+            <h1 class="title-primary">O3 Aventura</h1>
         </section>
 
         <section class="content">
-            <h2>Bienvenue chez O3 Aventura</h2>
-            <p>O3 Aventura est une entreprise spécialisée dans la création d'expériences immersives et de jeux
-                d'évasion. Nous sommes passionnés par l'idée de transporter les joueurs dans des mondes fantastiques et
-                de leur offrir des aventures inoubliables.</p>
-            <p>Notre équipe de créateurs talentueux travaille sans relâche pour concevoir des scénarios captivants, des
-                décors impressionnants et des énigmes stimulantes. Que vous soyez un amateur de jeux d'évasion ou
-                simplement à la recherche d'une expérience unique, O3 Aventura a quelque chose à offrir à tout le monde.
+            <h2 class="title-secondary">Bienvenue chez O3 Aventura</h2>
+            <p>O3 Aventura permet aux personnes travaillant chez O3 Experts de partager ses créations au travers de
+                déssins, les sujets sont libres, l'idée principale étant de laisser libre cours à l'imagination et à la
+                créativité de chacun.</p>
+            <p> Il est possible de démontrer ses talents pour simplement faire plaisir ou encore déssiner dans le cadre
+                d'un projet qui pourrait s'appliquer sur de la broderie, un skateboardet d'autres supports.
             </p>
+            <p> Autant dire que l'on a du pain sur la planche.
+        </section>
+
+        <section class="carousel">
+            <h2 class="title-secondary">Bienvenue chez O3 Aventura</h2>
+
+            <!-- Conteneur des slides -->
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="{{ asset('images/slide1.jpg') }}" alt="Slide 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="{{ asset('images/slide2.jpg') }}" alt="Slide 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="{{ asset('images/slide3.jpg') }}" alt="Slide 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contrôles -->
+            <button class="carousel-prev" aria-label="Slide précédente">❮</button>
+            <button class="carousel-next" aria-label="Slide suivante">❯</button>
+
+            <!-- Pagination -->
+            <div class="carousel-dots">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
         </section>
     </main>
 </body>

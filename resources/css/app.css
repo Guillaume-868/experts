@@ -47,9 +47,35 @@
     /* ===================== */
     /* Font sizes */
     /* ===================== */
-    --font-size-md: 1rem; /* 16px */
-    --font-size-lg: 1.25rem; /* 20px 20/16 = 1.25rem */
+    --font-size-md: 1.25rem; /* 20px 20/16 = 1.25rem */
+    --font-size-lg: 2rem; /* 32px 32/16 = 2rem */
     --font-size-xl: 3rem; /* 48px 48/16 = 3rem */
+}
+
+/* ===================== */
+/* TITRES PRINCIPAUX */
+/* ===================== */
+.title-primary {
+    font-family: "Frunchy Sage", cursive;
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    color: var(--color-white);
+}
+
+.title-secondary {
+    font-family: "Frunchy Sage", cursive;
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.title-tertiary {
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
 }
 
 /* ===================== */
@@ -226,12 +252,6 @@ main {
     margin-bottom: 5%;
 }
 
-.presentation h1 {
-    color: var(--color-white);
-    font-size: var(--font-size-xl);
-    font-family: "Frunchy Sage", cursive;
-}
-
 /* ===================== */
 /* Section Content*/
 /* ===================== */
@@ -239,6 +259,86 @@ main {
 .content {
     width: 100%;
     text-align: center;
-    padding: 5% 2%;
+    padding: 5% 4%;
     background-color: var(--color-secondary);
+    margin-bottom: 5%;
+}
+
+.content p {
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--font-size-md);
+    margin: 0 auto 1.25rem auto;
+}
+
+/* ===================== */
+/* Section Carousel */
+/* ===================== */
+.carousel {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 20%;
+    background-color: var(--color-secondary);
+}
+
+/* Conteneur */
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Track */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Slide */
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* Boutons */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-prev {
+    left: 1rem;
+}
+.carousel-next {
+    right: 1rem;
+}
+
+/* Pagination */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: var(--color-primary);
 }
