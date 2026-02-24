@@ -16,17 +16,18 @@
 /* ===================== */
 /* FONTS*/
 /* ===================== */
+
 @font-face {
     font-family: "Frunchy Sage";
-    src: url("/fonts/frunchy_sage/frunchy.otf") format("opentype");
-    font-weight: 400;
+    src: url("/fonts/frunchy_sage/frunchy.ttf") format("truetype");
+    font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Frunchy Sage_secondary";
-    src: url("/fonts/frunchy_sage/frunchy.ttf") format("opentype");
-    font-weight: 200;
+    font-family: "Frunchy Sage";
+    src: url("/fonts/frunchy_sage/frunchy.otf") format("opentype");
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -68,7 +69,7 @@ header.home {
 }
 
 .burger {
-    width: 40px;
+    width: 50%;
     cursor: pointer;
     display: block; /* visible on mobile */
 }
@@ -149,7 +150,7 @@ main {
 
 .presentation {
     width: 100%;
-    height: 30vh; /* hauteur en % de l’écran */
+    height: 29.2vh; /* hauteur en % de l’écran */
     max-height: 70vh;
     min-height: 20vh;
 
@@ -166,6 +167,6 @@ main {
 .presentation h1 {
     color: white;
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 200;
     font-family: "Frunchy Sage";
 }
