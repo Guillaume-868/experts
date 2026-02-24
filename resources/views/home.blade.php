@@ -34,6 +34,17 @@
         <section class="presentation" style="background-image: url('{{ asset('images/stranger-things.jpg') }}');">
             <h1>O3 Aventura</h1>
         </section>
+
+        <section class="content">
+            <h2>Bienvenue chez O3 Aventura</h2>
+            <p>O3 Aventura est une entreprise spécialisée dans la création d'expériences immersives et de jeux
+                d'évasion. Nous sommes passionnés par l'idée de transporter les joueurs dans des mondes fantastiques et
+                de leur offrir des aventures inoubliables.</p>
+            <p>Notre équipe de créateurs talentueux travaille sans relâche pour concevoir des scénarios captivants, des
+                décors impressionnants et des énigmes stimulantes. Que vous soyez un amateur de jeux d'évasion ou
+                simplement à la recherche d'une expérience unique, O3 Aventura a quelque chose à offrir à tout le monde.
+            </p>
+        </section>
     </main>
 </body>
 

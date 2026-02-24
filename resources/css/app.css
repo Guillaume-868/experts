@@ -22,6 +22,7 @@
     src: url("/fonts/frunchy_sage/frunchy.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -29,6 +30,26 @@
     src: url("/fonts/frunchy_sage/frunchy.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* ===================== */
+    /* Colors */
+    /* ===================== */
+    --color-primary: #04163c;
+    --color-secondary: #e3deda;
+    --color-white: #ffffff;
+
+    /* Text */
+    --color-black: #000000;
+
+    /* ===================== */
+    /* Font sizes */
+    /* ===================== */
+    --font-size-md: 1rem; /* 16px */
+    --font-size-lg: 1.25rem; /* 20px 20/16 = 1.25rem */
+    --font-size-xl: 3rem; /* 48px 48/16 = 3rem */
 }
 
 /* ===================== */
@@ -43,7 +64,7 @@
 /* HEADER */
 /* ===================== */
 header.home {
-    background-color: #04163c;
+    background-color: var(--color-primary);
     padding: 1rem 2rem;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -65,7 +86,7 @@ header.home {
 /* MENU BURGER */
 .right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .burger {
@@ -79,22 +100,22 @@ header.home nav {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -10px);
+    transform: translateX(-50%);
     width: 50%;
-    background-color: rgba(4, 22, 60, 0.85);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    /* hidden by default */
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.25s ease;
+    background-color: var(--color-primary);
+    backdrop-filter: blur(5px);
     border-radius: 18px;
     padding: 1rem 0;
     z-index: 1000;
+
+    /* invisible by default  */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
 }
 
 /* Menu visible when .show class is added */
@@ -115,10 +136,10 @@ header.home nav ul {
 }
 /* Customize the links  */
 header.home nav li a {
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -130,8 +151,8 @@ header.home nav li a {
 
 /* style for active link */
 header.home nav li a.active {
-    background-color: #ffffff;
-    color: #04163c;
+    background-color: var(--color-white);
+    color: var(--color-primary);
 }
 
 /* ===================== */
@@ -148,25 +169,34 @@ main {
     margin-bottom: 5%;
 }
 
+/* ===================== */
+/* Section Presentation*/
+/* ===================== */
+
 .presentation {
     width: 100%;
-    height: 29.2vh; /* hauteur en % de l’écran */
-    max-height: 70vh;
-    min-height: 20vh;
-
+    height: 22.6vh;
     background-size: cover;
-    background-position: 50% 25%;
-    background-repeat: no-repeat;
-
+    background-position: 20% 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    margin-bottom: 5%;
 }
 
 .presentation h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 200;
-    font-family: "Frunchy Sage";
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-family: "Frunchy Sage", cursive;
+}
+
+/* ===================== */
+/* Section Content*/
+/* ===================== */
+
+.content {
+    width: 100%;
+    text-align: center;
+    padding: 5% 2%;
+    background-color: var(--color-secondary);
 }
