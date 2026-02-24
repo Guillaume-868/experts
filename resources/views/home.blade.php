@@ -30,6 +30,9 @@
         </nav>
     </header>
 
+    <!-- OVERLAY -->
+    <div class="menu-overlay"></div>
+
     <main class="primary">
         <section class="presentation" style="background-image: url('{{ asset('images/stranger-things.jpg') }}');">
             <h1>O3 Aventura</h1>

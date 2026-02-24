@@ -60,6 +60,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ===================== */
+/* BODY */
+/* ===================== */
+
+/* Customer cant scroll when menu is open  */
+body.menu-open {
+    overflow: hidden;
+}
+
 /* ===================== */
 /* HEADER */
 /* ===================== */
@@ -102,7 +112,7 @@ header.home nav {
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 
@@ -115,7 +125,9 @@ header.home nav {
     /* invisible by default  */
     opacity: 0;
     pointer-events: none;
-    transition: all 0.25s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
 /* Menu visible when .show class is added */
@@ -123,6 +135,13 @@ header.home nav.show {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, 0);
+    display: flex;
+}
+
+header.home nav ul,
+header.home nav li,
+header.home nav a {
+    outline: none;
 }
 
 /* MENU ITEMS */
@@ -153,6 +172,29 @@ header.home nav li a {
 header.home nav li a.active {
     background-color: var(--color-white);
     color: var(--color-primary);
+}
+
+/* ===================== */
+/* MENU OVERLAY */
+/* ===================== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.2);
+
+    /* overlay invisiblze by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+}
+
+/* Overlay visible when menu is open */
+body.menu-open .menu-overlay {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* ===================== */
