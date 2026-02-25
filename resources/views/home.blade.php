@@ -49,35 +49,22 @@
             <p> Autant dire que l'on a du pain sur la planche.
         </section>
 
-        <section class="carousel">
-            <h2 class="title-secondary">Bienvenue chez O3 Aventura</h2>
-
-            <!-- Conteneur des slides -->
-            <div class="carousel-wrapper">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="{{ asset('images/slide1.jpg') }}" alt="Slide 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('images/slide2.jpg') }}" alt="Slide 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('images/slide3.jpg') }}" alt="Slide 3">
-                    </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="{{ asset('images/crocodiles.jpg') }}" alt="crocodile">
+                </div>
+                <div class="carousel-slide">
+                    <img src="{{ asset('images/king.jpg') }}" alt="king">
+                </div>
+                <div class="carousel-slide">
+                    <img src="{{ asset('images/girl.jpg') }}" alt="girl">
                 </div>
             </div>
 
-            <!-- Contrôles -->
             <button class="carousel-prev" aria-label="Slide précédente">❮</button>
             <button class="carousel-next" aria-label="Slide suivante">❯</button>
-
-            <!-- Pagination -->
-            <div class="carousel-dots">
-                <button class="dot active"></button>
-                <button class="dot"></button>
-                <button class="dot"></button>
-            </div>
-        </section>
+        </div>
     </main>
 </body>
 

@@ -38,7 +38,8 @@
     /* Colors */
     /* ===================== */
     --color-primary: #04163c;
-    --color-secondary: #e3deda;
+    --color-secondary: #f0e6e4;
+    --color-tertiary: #3980ac;
     --color-white: #ffffff;
 
     /* Text */
@@ -63,6 +64,8 @@
 }
 
 .title-secondary {
+    display: flex;
+    justify-content: center;
     font-family: "Frunchy Sage", cursive;
     font-size: var(--font-size-lg);
     font-weight: 400;
@@ -273,72 +276,38 @@ main {
 /* ===================== */
 /* Section Carousel */
 /* ===================== */
-.carousel {
-    width: 100%;
-    margin-bottom: 5%;
-    padding: 20%;
-    background-color: var(--color-secondary);
-}
-
-/* Conteneur */
+/* Carousel wrapper avec padding */
 .carousel-wrapper {
-    overflow: hidden;
     position: relative;
     width: 100%;
+    overflow: hidden;
+    box-sizing: border-box; /* important pour que le padding soit inclus dans la largeur */
 }
 
-/* Track */
+/* Track en flex */
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
-/* Slide */
+/* Chaque slide prend 100% du track */
 .carousel-slide {
-    min-width: 100%;
-    flex-shrink: 0;
-    text-align: center;
-}
-
-/* Boutons */
-.carousel-prev,
-.carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.carousel-prev {
-    left: 1rem;
-}
-.carousel-next {
-    right: 1rem;
-}
-
-/* Pagination */
-.carousel-dots {
+    flex: 0 0 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.carousel-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color-secondary);
-    border: none;
-    cursor: pointer;
+/* Image adaptée au slide */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.carousel-dots .dot.active {
-    background-color: var(--color-primary);
+.carousel-prev,
+.carousel-next {
+    display: none; /* hidden by default */
 }
