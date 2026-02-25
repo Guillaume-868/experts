@@ -50,6 +50,7 @@
         </section>
 
         <div class="carousel-wrapper">
+            <h2 class="title-secondary">Vos idées prennent vie</h2>
             <div class="carousel-track">
                 <div class="carousel-slide">
                     <img src="{{ asset('images/crocodiles.jpg') }}" alt="crocodile">
@@ -66,6 +67,22 @@
             <button class="carousel-next" aria-label="Slide suivante">❯</button>
         </div>
     </main>
+
+    <footer class="footer">
+        <nav class="footer-social" aria-label="Réseaux sociaux">
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+                <img src="{{ asset('images/x.svg') }}" alt="X">
+            </a>
+            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </nav>
+
+        <p class="footer-copy">© 2026 — Ton site</p>
+    </footer>
 </body>
 
 </html>

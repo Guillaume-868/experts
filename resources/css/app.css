@@ -70,7 +70,6 @@
     font-size: var(--font-size-lg);
     font-weight: 400;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
 }
 
 .title-tertiary {
@@ -264,7 +263,7 @@ main {
     text-align: center;
     padding: 5% 4%;
     background-color: var(--color-secondary);
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 }
 
 .content p {
@@ -282,6 +281,11 @@ main {
     width: 100%;
     overflow: hidden;
     box-sizing: border-box; /* important pour que le padding soit inclus dans la largeur */
+    margin-bottom: 10%;
+}
+
+.carousel-wrapper h2 {
+    background-color: var(--color-secondary);
 }
 
 /* Track en flex */
@@ -310,4 +314,82 @@ main {
 .carousel-prev,
 .carousel-next {
     display: none; /* hidden by default */
+}
+
+/* ===================== */
+/* Footer */
+/* ===================== */
+/* ===================== */
+/* Footer Modern 2026 */
+/* ===================== */
+
+.footer {
+    padding: 3rem 1.5rem;
+    background: linear-gradient(720deg, #ffffff, #04163c);
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logo */
+.footer-brand img {
+    max-width: 140px;
+    margin-bottom: 2rem;
+}
+
+/* Réseaux sociaux */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Boutons sociaux */
+.footer-social a {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Icônes SVG + FontAwesome uniformes */
+.footer-social img,
+.footer-social i {
+    width: 22px;
+    height: 22px; /* pour les images */
+    font-size: 22px; /* pour les icônes FontAwesome */
+    object-fit: contain;
+    border-radius: 50%; /* seulement utile pour les images */
+}
+
+/* Hover moderne */
+.footer-social a:hover {
+    transform: translateY(-6px);
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.footer-social a:hover img {
+    filter: none;
+}
+
+/* Copyright */
+.footer-copy {
+    font-size: 0.85rem;
+    opacity: 0.6;
 }
