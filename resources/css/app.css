@@ -102,20 +102,20 @@ body.menu-open {
 /* HEADER */
 /* ===================== */
 header.home {
-    background-color: var(--color-primary);
-    padding: 1rem 2rem;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     position: relative;
+    background-color: var(--color-primary);
 }
 
 /* LOGO AVENTURA */
-.center {
-    display: flex;
-    justify-content: center;
+.center a img {
+    width: clamp(150px, 25vw, 200px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
-
 .logo {
     width: clamp(200px, 12vw, 250px);
     height: auto;
@@ -125,12 +125,18 @@ header.home {
 .right {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .burger {
-    width: 50%;
+    width: 4rem;
     cursor: pointer;
-    display: block; /* visible on mobile */
+    display: block;
+}
+
+.burger-close {
+    width: 4rem;
+    display: none; /* visible when menu is open */
 }
 
 /* MENU BURGER MOBILE - hidden by default */
@@ -275,12 +281,11 @@ main {
 /* ===================== */
 /* Section Carousel */
 /* ===================== */
-/* Carousel wrapper avec padding */
+
 .carousel-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
-    box-sizing: border-box; /* important pour que le padding soit inclus dans la largeur */
     margin-bottom: 10%;
 }
 
@@ -288,14 +293,14 @@ main {
     background-color: var(--color-secondary);
 }
 
-/* Track en flex */
+/* Slide inside the track  */
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
 }
 
-/* Chaque slide prend 100% du track */
+/* flow layout for each slide */
 .carousel-slide {
     flex: 0 0 100%;
     display: flex;
@@ -304,7 +309,7 @@ main {
     box-sizing: border-box;
 }
 
-/* Image adaptée au slide */
+/* dimension for images inside slides  */
 .carousel-slide img {
     width: 100%;
     height: 100%;
@@ -319,29 +324,28 @@ main {
 /* ===================== */
 /* Footer */
 /* ===================== */
-/* ===================== */
-/* Footer Modern 2026 */
-/* ===================== */
 
 .footer {
-    padding: 3rem 1.5rem;
-    background: linear-gradient(720deg, #ffffff, #04163c);
-    color: white;
+    padding: 3rem 5%;
+    background: linear-gradient(180deg, #ffffff, #04163c);
 }
 
+/* Conteneur centré */
 .footer-container {
-    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
     text-align: center;
 }
 
 /* Logo */
 .footer-brand img {
-    max-width: 140px;
+    width: 40%;
+    max-width: 250px;
+    height: auto;
     margin-bottom: 2rem;
 }
 
-/* Réseaux sociaux */
+/* Social Networks */
 .footer-social {
     display: flex;
     justify-content: center;
@@ -349,10 +353,11 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Boutons sociaux */
+/* Social Buttons */
 .footer-social a {
-    width: 52px;
-    height: 52px;
+    width: 3.2rem;
+    height: 3.2rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -367,29 +372,44 @@ main {
         box-shadow 0.3s ease;
 }
 
-/* Icônes SVG + FontAwesome uniformes */
+/* Icônes */
 .footer-social img,
 .footer-social i {
-    width: 22px;
-    height: 22px; /* pour les images */
-    font-size: 22px; /* pour les icônes FontAwesome */
+    width: 1.4rem;
+    height: 1.4rem;
     object-fit: contain;
-    border-radius: 50%; /* seulement utile pour les images */
 }
 
-/* Hover moderne */
+/* Hover */
 .footer-social a:hover {
-    transform: translateY(-6px);
     background: white;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-.footer-social a:hover img {
-    filter: none;
+a svg {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    transition: fill 0.3s;
+    color: #000000;
+}
+
+/*Gradient for Instagram */
+a.instagram:hover svg .insta-path {
+    fill: url(#instaGradient);
+}
+
+a.linkedin:hover svg path {
+    fill: #005582;
+}
+
+a.youtube:hover svg path {
+    fill: #f9170b;
 }
 
 /* Copyright */
 .footer-copy {
-    font-size: 0.85rem;
-    opacity: 0.6;
+    font-size: var(--font-size-md);
+    color: white;
 }
