@@ -1,4 +1,5 @@
 export function carousel() {
+    // Wait for the entire DOM to be loaded before starting the carousel
     document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector(".carousel-track");
         const slides = Array.from(track.children);
@@ -8,40 +9,70 @@ export function carousel() {
             document.querySelectorAll(".carousel-dots .dot"),
         );
 
-        let currentIndex = 0;
+        let index = 0;
 
         function updateCarousel() {
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Update dots
+            track.style.transform = `translateX(-${index * 100}%)`;
             dots.forEach((dot, i) =>
-                dot.classList.toggle("active", i === currentIndex),
+                dot.classList.toggle("active", i === index),
             );
         }
 
-        // Navigation boutons
+        // Button navigation
         nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slides.length;
+            index = (index + 1) % slides.length;
             updateCarousel();
         });
 
         prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            index = (index - 1 + slides.length) % slides.length;
             updateCarousel();
         });
 
-        // Navigation pagination
+        // Dot navigation
         dots.forEach((dot, i) => {
             dot.addEventListener("click", () => {
-                currentIndex = i;
+                index = i;
                 updateCarousel();
             });
         });
 
-        // Optionnel: autoplay toutes les 5 secondes
+        // Autoplay every 5 seconds
         setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
+            index = (index + 1) % slides.length;
             updateCarousel();
         }, 5000);
+
+        // =======================
+        // Swipe for mobile
+        // =======================
+        let startX = 0;
+        let endX = 0;
+        const threshold = 50; // Minimum px to count as swipe
+
+        track.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        track.addEventListener("touchmove", (e) => {
+            endX = e.touches[0].clientX;
+        });
+
+        track.addEventListener("touchend", () => {
+            const diff = startX - endX;
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    // Swipe left → next slide
+                    index = (index + 1) % slides.length;
+                } else {
+                    // Swipe right → previous slide
+                    index = (index - 1 + slides.length) % slides.length;
+                }
+                updateCarousel();
+            }
+            // Reset values
+            startX = 0;
+            endX = 0;
+        });
     });
 }

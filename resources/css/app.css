@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: "Frunchy Sage";
-    src: url("/fonts/frunchy_sage/frunchy.ttf") format("truetype");
+    src: url("../fonts/frunchy.ttf") format("opentype");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
     font-family: "Frunchy Sage";
-    src: url("/fonts/frunchy_sage/frunchy.otf") format("opentype");
+    src: url("../fonts/frunchy.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -39,7 +39,7 @@
     /* ===================== */
     --color-primary: #04163c;
     --color-secondary: #f0e6e4;
-    --color-tertiary: #3980ac;
+    --color-tertiary: #2196f3;
     --color-white: #ffffff;
 
     /* Text */
@@ -54,7 +54,7 @@
 }
 
 /* ===================== */
-/* TITRES PRINCIPAUX */
+/* Primary Titles */
 /* ===================== */
 .title-primary {
     font-family: "Frunchy Sage", cursive;
@@ -67,7 +67,7 @@
     display: flex;
     justify-content: center;
     font-family: "Frunchy Sage", cursive;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 400;
     color: var(--color-primary);
 }
@@ -92,6 +92,10 @@
 /* ===================== */
 /* BODY */
 /* ===================== */
+
+body {
+    min-width: 480px;
+}
 
 /* Customer cant scroll when menu is open  */
 body.menu-open {
@@ -235,7 +239,6 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 /* ===================== */
@@ -314,6 +317,26 @@ main {
     display: none; /* hidden by default */
 }
 
+/* Pagination dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    gap: 5px;
+}
+
+.carousel-dots .dot {
+    padding: 1.5%;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carousel-dots .dot.active {
+    background: var(--color-primary);
+}
+
 /* ===================== */
 /* Footer */
 /* ===================== */
@@ -379,13 +402,13 @@ main {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-a svg {
+.footer-social a svg {
     width: 2rem;
     height: 2rem;
     display: inline-block;
     vertical-align: middle;
     transition: fill 0.3s;
-    color: #000000;
+    color: #04163c;
 }
 
 /*Gradient for Instagram */
@@ -408,12 +431,13 @@ a.youtube:hover svg path {
 }
 
 /* ===================== */
-/* Screan ≥ 768px */
+/* Screen ≥ 768px */
 /* ===================== */
 @media (min-width: 768px) {
     /* ===================== */
     /* HEADER */
     /* ===================== */
+
     header.home .right {
         display: none;
     }
@@ -428,9 +452,9 @@ a.youtube:hover svg path {
         width: 100%;
         background: transparent;
         backdrop-filter: none;
-        padding: 1rem 0 0 0;
         grid-column: 1 / -1; /* prend toute la largeur */
         justify-content: center;
+        padding-bottom: 2%;
     }
 
     header.home nav ul {
@@ -444,18 +468,13 @@ a.youtube:hover svg path {
         padding: 0.5rem 0;
     }
 
-    /* On enlève l’overlay */
-    .menu-overlay {
-        display: none;
+    header.home nav ul li a.active {
+        background-color: transparent;
+        color: var(--color-tertiary);
     }
 
-    /* ===================== */
-    /* PRESENTATION */
-    /* ===================== */
-
-    .presentation {
-        height: 35vh;
-        background-position: center;
+    .menu-overlay {
+        display: none;
     }
 
     /* ===================== */
@@ -463,11 +482,7 @@ a.youtube:hover svg path {
     /* ===================== */
 
     .content {
-        padding: 4% 10%;
-    }
-
-    .content p {
-        max-width: 700px;
+        padding: 4% 17%;
     }
 
     /* ===================== */
@@ -478,7 +493,7 @@ a.youtube:hover svg path {
     .carousel-next {
         display: block;
         position: absolute;
-        top: 55%;
+        top: 50%;
         transform: translateY(-50%);
         background: rgba(4, 22, 60, 0.7);
         color: white;
@@ -504,10 +519,6 @@ a.youtube:hover svg path {
     /* ===================== */
     /* FOOTER */
     /* ===================== */
-
-    .footer-brand img {
-        width: 200px;
-    }
 
     .footer-container {
         width: 70%;

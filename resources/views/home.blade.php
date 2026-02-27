@@ -51,7 +51,8 @@
             <p> Autant dire que l'on a du pain sur la planche.
         </section>
 
-        <div class="carousel-wrapper">
+
+        <section class="carousel-wrapper">
             <h2 class="title-secondary">Vos idées prennent vie</h2>
             <div class="carousel-track">
                 <div class="carousel-slide">
@@ -67,7 +68,14 @@
 
             <button class="carousel-prev" aria-label="Slide précédente">❮</button>
             <button class="carousel-next" aria-label="Slide suivante">❯</button>
-        </div>
+
+            <!-- Pagination dots -->
+            <div class="carousel-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
     </main>
     <x-footer></x-footer>
 
