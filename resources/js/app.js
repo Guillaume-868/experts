@@ -8,10 +8,14 @@ initBurgerMenu();
 const links = document.querySelectorAll(".menu-link");
 
 links.forEach((link) => {
+    // if the url corresponds to the current page
+    if (link.href === window.location.href) {
+        link.classList.add("active");
+    }
+
+    // navigation page
     link.addEventListener("click", () => {
-        // delete 'active' from all links
-        links.forEach((link) => link.classList.remove("active"));
-        // add 'active' to the clicked link
+        links.forEach((l) => l.classList.remove("active"));
         link.classList.add("active");
     });
 });

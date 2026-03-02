@@ -16,7 +16,7 @@
         <ul>
             <li><a href="{{ route('home') }}" class="menu-link">Accueil</a></li>
             <li><a href="#" class="menu-link">Nos créations</a></li>
-            <li><a href="#" class="menu-link">Contact</a></li>
+            <li><a href="{{ route('contact') }}" class="menu-link">Contact</a></li>
         </ul>
     </nav>
 </header>

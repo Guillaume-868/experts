@@ -385,6 +385,7 @@ a.youtube:hover svg path {
     header.home .right {
         display: none;
     }
+
     header.home {
         display: flex;
         flex-direction: column;
@@ -405,6 +406,13 @@ a.youtube:hover svg path {
         flex-direction: row;
         gap: 2rem;
         justify-content: center;
+        padding-bottom: 2%;
+    }
+
+    header.home nav a.active {
+        background-color: transparent;
+        color: var(--color-secondary);
+        border-bottom: 2px solid var(--color-secondary);
     }
 
     main.primary {

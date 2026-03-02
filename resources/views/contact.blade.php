@@ -11,6 +11,8 @@
 <body>
     <x-header></x-header>
 
+    <!-- OVERLAY -->
+    <div class="menu-overlay"></div>
 
     <x-footer></x-footer>
 
