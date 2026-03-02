@@ -50,7 +50,7 @@
                     créativité de chacun.</p>
                 <p> Il est possible de démontrer ses talents pour simplement faire plaisir ou encore déssiner dans le
                     cadre
-                    d'un projet qui pourrait s'appliquer sur de la broderie, un skateboardet d'autres supports.
+                    d'un projet qui pourrait s'appliquer sur de la broderie, un skateboard et d'autres supports.
                 </p>
                 <p> Autant dire que l'on a du pain sur la planche.
             </section>
