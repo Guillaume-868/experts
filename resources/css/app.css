@@ -503,3 +503,73 @@ a.youtube:hover svg path {
         padding: 1.25%;
     }
 }
+
+/* ========================================================================================================= */
+/*                                      Page Contact                                                            */
+/* ========================================================================================================= */
+
+.main-contact .presentation {
+    background-position: right;
+}
+
+.main-contact .presentation h1 {
+    color: var(--color-primary);
+}
+
+.contact-form {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 18px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI Symbol", cursive;
+    margin-bottom: 5%;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--color-tertiary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 400;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-primary);
+}
+
+.consent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.consent input[type="checkbox"] {
+    transform: scale(1.4); /*side for checkbox*/
+    accent-color: var(--color-tertiary);
+}

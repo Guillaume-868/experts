@@ -2,6 +2,8 @@ export function carousel() {
     // Wait for the entire DOM to be loaded before starting the carousel
     document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector(".carousel-track");
+        if (!track)
+            return; /*prevents the error if there isn't carousel in the page*/
         const slides = Array.from(track.children);
         const nextButton = document.querySelector(".carousel-next");
         const prevButton = document.querySelector(".carousel-prev");
