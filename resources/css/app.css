@@ -570,6 +570,13 @@ a.youtube:hover svg path {
 }
 
 .consent input[type="checkbox"] {
-    transform: scale(1.4); /*side for checkbox*/
+    transform: scale(1.4); /* size for checkbox*/
     accent-color: var(--color-tertiary);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
 }

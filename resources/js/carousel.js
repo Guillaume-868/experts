@@ -13,6 +13,7 @@ export function carousel() {
 
         let index = 0;
 
+        /*Update the display of carousel*/
         function updateCarousel() {
             track.style.transform = `translateX(-${index * 100}%)`;
             dots.forEach((dot, i) =>
@@ -20,7 +21,7 @@ export function carousel() {
             );
         }
 
-        // Button navigation
+        // Button navigation (not present on mobile)
         nextButton.addEventListener("click", () => {
             index = (index + 1) % slides.length;
             updateCarousel();
