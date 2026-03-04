@@ -508,6 +508,10 @@ a.youtube:hover svg path {
 /*                                      Page Contact                                                            */
 /* ========================================================================================================= */
 
+.main-contact {
+    margin-bottom: 5%;
+}
+
 .main-contact .presentation {
     background-position: right;
 }
@@ -524,7 +528,6 @@ a.youtube:hover svg path {
     background-color: #f9f9f9;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: "Segoe UI Symbol", cursive;
-    margin-bottom: 5%;
 }
 
 .contact-form label {
@@ -562,9 +565,6 @@ a.youtube:hover svg path {
 }
 
 .consent {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     margin-top: 1rem;
     font-size: 0.9rem;
 }
@@ -574,9 +574,19 @@ a.youtube:hover svg path {
     accent-color: var(--color-tertiary);
 }
 
+.consent-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .error-message {
-    color: red;
     font-size: 0.85rem;
     margin-top: 4px;
-    display: block;
+    min-height: 50px;
+    color: transparent; /* invisible par défaut */
+}
+
+.error-message.visible {
+    color: red;
 }

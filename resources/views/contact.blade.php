@@ -20,8 +20,8 @@
         </section>
 
         <section class="form">
-            <form action="/send-message" method="POST" class="contact-form" novalidate>
-                @csrf
+            <form action="#" method="POST" class="contact-form" novalidate>
+
                 <h2 class="title-secondary">Contactez-nous</h2>
 
                 <!-- LastName -->
@@ -51,10 +51,13 @@
 
                 <!-- Consent RGPD -->
                 <div class="consent">
-                    <input type="checkbox" id="rgpd" name="rgpd" required>
+                    <div class="consent-line">
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        <label for="rgpd">
+                            J'accepte que mes informations soient utilisées pour répondre à ma demande.
+                        </label>
+                    </div>
                     <span class="error-message"></span>
-                    <label for="rgpd">J'accepte que mes informations soient utilisées pour répondre à ma
-                        demande.</label>
                 </div>
 
                 <!-- Button submit -->
