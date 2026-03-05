@@ -7,15 +7,18 @@ initBurgerMenu();
 // **************** Links for active state on click (Menu Burger) **************
 const links = document.querySelectorAll(".menu-link");
 
+// Set the active link on page load
 links.forEach((link) => {
-    // if the url corresponds to the current page
-    if (link.href === window.location.href) {
+    // Check if the link's path matches the current page path
+    if (link.pathname === window.location.pathname) {
         link.classList.add("active");
     }
 
-    // navigation page
+    // Add click event listener for navigation
     link.addEventListener("click", () => {
-        links.forEach((l) => l.classList.remove("active"));
+        // Remove "active" class from all links
+        links.forEach((link) => link.classList.remove("active"));
+        // Add "active" class to the clicked link
         link.classList.add("active");
     });
 });

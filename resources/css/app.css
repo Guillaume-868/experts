@@ -46,6 +46,9 @@
     font-size: 5rem;
     font-weight: 400;
     color: var(--color-white);
+    transition:
+        font-size 0.5s ease-in-out,
+        color 0.3s ease-in-out;
 }
 
 .title-secondary {
@@ -55,6 +58,9 @@
     font-size: var(--font-size-xl);
     font-weight: 400;
     color: var(--color-primary);
+    transition:
+        font-size 0.5s ease-in-out,
+        color 0.3s ease-in-out;
 }
 
 .title-tertiary {
@@ -63,6 +69,9 @@
     font-weight: 600;
     color: var(--color-primary);
     margin-bottom: 0.75rem;
+    transition:
+        font-size 0.4s ease-in-out,
+        color 0.3s ease-in-out;
 }
 
 /* ===================== */
@@ -106,6 +115,9 @@ header.home {
     height: auto;
     display: block;
     margin: 0 auto;
+    transition:
+        width 0.5s ease-in-out,
+        height 0.5s ease-in-out;
 }
 
 /* MENU BURGER */
@@ -118,6 +130,7 @@ header.home {
 .burger,
 .burger-close {
     width: 4rem;
+    transition: width 0.3s ease;
 }
 
 .burger-close {
@@ -168,8 +181,9 @@ header.home nav a {
     padding: 0.5rem 1rem;
     text-align: center;
     transition:
-        background-color 0.2s,
-        color 0.2s;
+        background-color 0.2s ease,
+        color 0.2s ease,
+        font-size 0.5s ease-in-out;
 }
 
 header.home nav a.active {
@@ -187,7 +201,9 @@ header.home nav a.active {
     background: rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
     z-index: 900;
 }
 
@@ -227,12 +243,16 @@ main {
     padding: 4% 1.5%;
     background-color: var(--color-secondary);
     margin-bottom: 15%;
+    transition:
+        padding 0.3s ease,
+        font-size 0.4s ease-in-out;
 }
 
 .content p {
     font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
     font-size: var(--font-size-md);
     margin: 0 auto 1.25rem auto;
+    transition: font-size 0.4s ease-in-out;
 }
 
 /* Section Carousel */
@@ -294,7 +314,9 @@ main {
     background: var(--color-secondary);
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.2s;
+    transition:
+        background 0.2s ease,
+        padding 0.3s ease;
 }
 
 .carousel-dots .dot.active {
@@ -318,6 +340,9 @@ main {
     max-width: 250px;
     height: auto;
     margin-bottom: 2rem;
+    transition:
+        width 0.5s ease-in-out,
+        height 0.5s ease-in-out;
 }
 
 .footer-social {
@@ -348,7 +373,10 @@ main {
     width: 1.4rem;
     height: 1.4rem;
     object-fit: contain;
-    transition: fill 0.3s;
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        fill 0.3s ease;
 }
 
 .footer-social a:hover {
@@ -377,6 +405,7 @@ a.youtube:hover svg path {
 .footer-copy {
     font-size: var(--font-size-md);
     color: white;
+    transition: font-size 0.4s ease-in-out;
 }
 
 /* ===================== */
@@ -421,10 +450,12 @@ a.youtube:hover svg path {
 
     h2.title-secondary {
         font-size: var(--font-size-xl);
+        transition: font-size 0.5s ease-in-out;
     }
 
     .content {
         padding: 0.5% 2%;
+        transition: padding 0.3s ease;
     }
 
     .home-sections {
@@ -443,6 +474,10 @@ a.youtube:hover svg path {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transition:
+            width 0.4s ease-in-out,
+            margin 0.3s ease,
+            border-radius 0.3s ease;
     }
 
     .carousel-prev,
@@ -458,6 +493,7 @@ a.youtube:hover svg path {
 
     .carousel-slide img {
         border-radius: 5%;
+        transition: border-radius 0.3s ease;
     }
 
     .carousel-dots {
@@ -465,29 +501,50 @@ a.youtube:hover svg path {
     }
     .carousel-dots .dot {
         padding: 3%;
+        transition: padding 0.3s ease;
     }
 
     .footer-container {
         width: 70%;
+        transition: width 0.4s ease-in-out;
     }
 }
 
 /* Screen ≥ 1024px */
 @media (min-width: 1024px) {
+    .center a img,
+    .logo {
+        width: clamp(150px, 20vw, 250px);
+        transition: width 0.5s ease-in-out;
+    }
+
+    header.home nav a {
+        font-size: var(--font-size-xl);
+        transition:
+            font-size 0.5s ease-in-out,
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
     h1.title-primary {
         font-size: 8rem;
+        transition: font-size 0.5s ease-in-out;
     }
     h2.title-secondary {
         font-size: 3rem;
+        transition: font-size 0.5s ease-in-out;
     }
     .content p {
         font-size: 1.23rem;
+        transition: font-size 0.4s ease-in-out;
     }
     .carousel-dots .dot {
         padding: 2%;
+        transition: padding 0.3s ease;
     }
     .footer-copy {
         font-size: var(--font-size-lg);
+        transition: font-size 0.4s ease-in-out;
     }
 }
 
@@ -495,12 +552,15 @@ a.youtube:hover svg path {
 @media (min-width: 1440px) {
     h2.title-secondary {
         font-size: 5rem;
+        transition: font-size 0.5s ease-in-out;
     }
     .content p {
         font-size: 1.5rem;
+        transition: font-size 0.5s ease-in-out;
     }
     .carousel-dots .dot {
         padding: 1.25%;
+        transition: padding 0.3s ease;
     }
 }
 
@@ -534,6 +594,7 @@ a.youtube:hover svg path {
     display: block;
     margin-top: 1rem;
     font-weight: bold;
+    transition: font-size 0.4s ease-in-out;
 }
 
 .contact-form input:not([type="checkbox"]),
@@ -544,6 +605,10 @@ a.youtube:hover svg path {
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    transition:
+        font-size 0.4s ease-in-out,
+        border 0.3s ease,
+        background 0.3s ease;
 }
 
 .contact-form button {
@@ -556,7 +621,9 @@ a.youtube:hover svg path {
     border-radius: 8px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition:
+        font-size 0.4s ease-in-out,
+        background 0.3s ease;
     font-weight: 400;
 }
 
@@ -569,24 +636,51 @@ a.youtube:hover svg path {
     font-size: 0.9rem;
 }
 
-.consent input[type="checkbox"] {
-    transform: scale(1.4); /* size for checkbox*/
-    accent-color: var(--color-tertiary);
-}
-
 .consent-line {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+}
+
+.consent input[type="checkbox"] {
+    transform: scale(1.4);
+    accent-color: var(--color-tertiary);
+    margin-bottom: 0.2rem;
+    transition:
+        transform 0.3s ease,
+        accent-color 0.3s ease;
 }
 
 .error-message {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin-top: 4px;
     min-height: 50px;
-    color: transparent; /* invisible par défaut */
+    color: transparent;
+    transition: color 0.3s ease;
 }
 
 .error-message.visible {
     color: red;
+}
+
+/* Screen ≥ 1024px */
+@media (min-width: 1024px) {
+    .contact-form label,
+    .contact-form input:not([type="checkbox"]),
+    .contact-form textarea {
+        font-size: 1.25rem;
+    }
+
+    .error-message {
+        font-size: 1rem;
+    }
+
+    .consent input[type="checkbox"] {
+        transform: scale(1.8);
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-form button {
+        font-size: 1.5rem;
+    }
 }

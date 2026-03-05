@@ -2,15 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$pages = ['home', 'contact', 'creations'];
 
-
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+foreach ($pages as $page) {
+    Route::get("/$page", fn() => view($page))->name($page);
+}

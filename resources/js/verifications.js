@@ -33,7 +33,8 @@ const fields = [
     {
         selector: "#rgpd",
         validate: (element) => element.checked,
-        message: "Vous devez accepter le RGPD",
+        message:
+            "Vous devez accepter le Règlement Général sur la Protection des Données",
     },
 ];
 
@@ -42,9 +43,9 @@ form.addEventListener("submit", (event) => {
 
     resetErrors();
 
-    // Check if all fields are valid: for each field, select the corresponding form element,
-    // run its validate function, show an error message if invalid, and stop at the first invalid field.
-    const isValid = fields.every((field) => {
+    // Validate each field: select the form element, run its validate function, show an error if invalid,
+    // and stop at the first invalid field.
+    const isValid = fields.forEach((field) => {
         const element = form.querySelector(field.selector);
         if (!field.validate(element)) {
             showError(element, field.message);
@@ -76,6 +77,7 @@ function showError(input, message) {
     // Special case: RGPD checkbox has a different HTML structure
     if (input.type === "checkbox") {
         const consentBlock = input.closest(".consent");
+        // console.log(consentBlock);
         errorSpan = consentBlock.querySelector(".error-message");
     }
     // Standard fields: error message is the next sibling element
