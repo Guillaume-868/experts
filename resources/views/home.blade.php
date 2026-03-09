@@ -15,7 +15,7 @@
     <div class="menu-overlay"></div>
 
     <main class="primary">
-        <section class="presentation" style="background-image: url('{{ asset('images/stranger-things.jpg') }}');">
+        <section class="banner banner-home" style="background-image: url('{{ asset('images/stranger-things.jpg') }}');">
             <h1 class="title-primary">O3 Aventura</h1>
         </section>
 

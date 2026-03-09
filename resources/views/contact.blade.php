@@ -15,7 +15,7 @@
     <div class="menu-overlay"></div>
 
     <main class="main-contact">
-        <section class="presentation" style="background-image: url('{{ asset('images/contact.jpg') }}');">
+        <section class=" banner banner-contact" style="background-image: url('{{ asset('images/contact.jpg') }}');">
             <h1 class="title-primary">Contact</h1>
         </section>
 
