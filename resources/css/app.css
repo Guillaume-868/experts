@@ -33,9 +33,12 @@
     --color-black: #000000;
 
     /* Font sizes */
-    --font-size-md: 1rem;
-    --font-size-lg: 1.5rem;
-    --font-size-xl: 2.25rem;
+    --font-size-sm: 1rem;
+    --font-size-base: 1.15rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2.25rem;
+    --font-size-xl: 4.5rem;
+    --font-size-hero: 8rem;
 }
 
 /* ===================== */
@@ -43,34 +46,20 @@
 /* ===================== */
 .title-primary {
     font-family: "Frunchy Sage", cursive;
-    font-size: 5rem;
+    font-size: var(--font-size-hero);
     font-weight: 400;
     color: var(--color-white);
-    transition:
-        font-size 0.5s ease-in-out,
-        color 0.3s ease-in-out;
 }
 
 .title-secondary {
     display: flex;
     justify-content: center;
     font-family: "Frunchy Sage", cursive;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: 400;
     color: var(--color-primary);
     transition:
         font-size 0.5s ease-in-out,
-        color 0.3s ease-in-out;
-}
-
-.title-tertiary {
-    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-    font-size: var(--font-size-md);
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-    transition:
-        font-size 0.4s ease-in-out,
         color 0.3s ease-in-out;
 }
 
@@ -86,6 +75,9 @@
 /* ===================== */
 /* BODY */
 /* ===================== */
+body {
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+}
 
 body.menu-open {
     overflow: hidden;
@@ -201,7 +193,7 @@ header.home nav a {
     color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
-    font-size: var(--font-size-lg);
+    font-size: 2rem;
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -261,15 +253,14 @@ main {
     text-align: center;
     padding: 4% 1.5%;
     background-color: var(--color-secondary);
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     transition:
         padding 0.3s ease,
         font-size 0.4s ease-in-out;
 }
 
 .content p {
-    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-base);
     margin: 0 auto 1.25rem auto;
     transition: font-size 0.4s ease-in-out;
 }
@@ -401,6 +392,7 @@ main {
 .footer-social a:hover {
     background: white;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transform: scale(1.15);
 }
 
 .footer-social a svg {
@@ -422,7 +414,7 @@ a.youtube:hover svg path {
 }
 
 .footer-copy {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     color: white;
     transition: font-size 0.4s ease-in-out;
 }
@@ -448,6 +440,9 @@ a.youtube:hover svg path {
         width: 100%;
         background: transparent;
         transform: none;
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
     }
 
     header.home nav ul {
@@ -463,12 +458,16 @@ a.youtube:hover svg path {
         border-bottom: 2px solid var(--color-secondary);
     }
 
+    .menu-overlay {
+        display: none;
+    }
+
     main.primary {
         margin-bottom: 10%;
     }
 
     h2.title-secondary {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-lg);
         transition: font-size 0.5s ease-in-out;
     }
 
@@ -502,6 +501,9 @@ a.youtube:hover svg path {
     .carousel-prev,
     .carousel-next {
         display: block;
+        transition:
+            background 0.25s ease,
+            transform 0.25s ease;
     }
     .carousel-prev {
         left: 1rem;
@@ -527,59 +529,51 @@ a.youtube:hover svg path {
         width: 70%;
         transition: width 0.4s ease-in-out;
     }
+
+    .footer-social a {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .footer-social a svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 
 /* Screen ≥ 1024px */
 @media (min-width: 1024px) {
-    .center a img,
-    .logo {
-        width: clamp(150px, 20vw, 250px);
-        transition: width 0.5s ease-in-out;
-    }
-
-    header.home nav a {
-        font-size: var(--font-size-xl);
-        transition:
-            font-size 0.5s ease-in-out,
-            background-color 0.3s ease,
-            color 0.3s ease;
-    }
-
-    h1.title-primary {
-        font-size: 8rem;
-        transition: font-size 0.5s ease-in-out;
-    }
-    h2.title-secondary {
+    header.home nav ul a {
         font-size: 3rem;
-        transition: font-size 0.5s ease-in-out;
-    }
-    .content p {
-        font-size: 1.23rem;
-        transition: font-size 0.4s ease-in-out;
-    }
-    .carousel-dots .dot {
-        padding: 2%;
-        transition: padding 0.3s ease;
-    }
-    .footer-copy {
-        font-size: var(--font-size-lg);
-        transition: font-size 0.4s ease-in-out;
     }
 }
 
 /* Screen ≥ 1440px */
 @media (min-width: 1440px) {
+    .banner h1 {
+        font-size: calc(var(--font-size-hero) * 2);
+    }
     h2.title-secondary {
-        font-size: 5rem;
+        font-size: var(--font-size-xl);
         transition: font-size 0.5s ease-in-out;
     }
     .content p {
-        font-size: 1.5rem;
+        font-size: var(--font-size-md);
         transition: font-size 0.5s ease-in-out;
     }
     .carousel-dots .dot {
         padding: 1.25%;
         transition: padding 0.3s ease;
+    }
+
+    .footer-social a {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .footer-social a svg {
+        width: 3rem;
+        height: 3rem;
     }
 }
 
@@ -606,14 +600,12 @@ a.youtube:hover svg path {
     border-radius: 18px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 .contact-form label {
     display: block;
     margin-top: 1rem;
     font-weight: bold;
-    transition: font-size 0.4s ease-in-out;
 }
 
 .contact-form input:not([type="checkbox"]),
@@ -623,7 +615,7 @@ a.youtube:hover svg path {
     margin-top: 0.25rem;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     transition:
         font-size 0.4s ease-in-out,
         border 0.3s ease,
@@ -638,7 +630,7 @@ a.youtube:hover svg path {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     cursor: pointer;
     transition:
         font-size 0.4s ease-in-out,
@@ -652,7 +644,7 @@ a.youtube:hover svg path {
 
 .consent {
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
 }
 
 .consent-line {
@@ -671,7 +663,7 @@ a.youtube:hover svg path {
 }
 
 .error-message {
-    font-size: 0.75rem;
+    font-size: var(--font-size-sm);
     margin-top: 4px;
     min-height: 50px;
     color: transparent;
@@ -687,11 +679,15 @@ a.youtube:hover svg path {
     .contact-form label,
     .contact-form input:not([type="checkbox"]),
     .contact-form textarea {
-        font-size: 1.25rem;
+        font-size: var(--font-size-md);
+    }
+
+    .contact-form h2 {
+        font-size: var(--font-size-xl);
     }
 
     .error-message {
-        font-size: 1rem;
+        font-size: var(--font-size-base);
     }
 
     .consent input[type="checkbox"] {
@@ -700,7 +696,7 @@ a.youtube:hover svg path {
     }
 
     .contact-form button {
-        font-size: 1.5rem;
+        font-size: var(--font-size-md);
     }
 }
 
@@ -715,4 +711,50 @@ a.youtube:hover svg path {
 
 .banner-creations {
     background-position: 20% 45%;
+}
+
+.feat-skate p {
+    font-size: var(--font-size-base);
+    margin: 0 auto 1.25rem auto;
+    transition: font-size 0.4s ease-in-out;
+    text-align: center;
+}
+
+.skate-board {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 5%;
+    background-image: url("/images/cloud.jpg");
+    height: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+.skate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+/* Images */
+.skate {
+    display: block;
+    width: 70%;
+    height: auto;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.skate:hover {
+    transform: translateY(-20px) scale(1.1) rotate(-3deg);
+}
+
+.skate-down:hover {
+    transform: translateY(20px) scale(1.1) rotate(-3deg);
 }

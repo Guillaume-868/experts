@@ -1,13 +1,16 @@
 const form = document.querySelector(".contact-form");
 if (!form) throw new Error("Formulaire introuvable !"); /* Console*/
 
-const emailPattern =
-    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; /* REGEX : email*/
+/* REGEX email */
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+/* Array */
 const fields = [
     {
         selector: "#name",
-        validate: (element) => element.value.trim() !== "",
+        validate: (element) =>
+            element.value.trim() !==
+            "" /* trim() : method that removes the spaces before and after the text*/,
         message: "Le nom est requis",
     },
     {
@@ -33,37 +36,37 @@ const fields = [
     {
         selector: "#rgpd",
         validate: (element) => element.checked,
-        message:
-            "Vous devez accepter le Règlement Général sur la Protection des Données",
+        message: "Vous devez accepter le RGPD",
     },
 ];
 
 form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevents any real sending
-
+    event.preventDefault(); /* Prevent default form submission */
     resetErrors();
 
-    // Validate each field: select the form element, run its validate function, show an error if invalid,
-    // and stop at the first invalid field.
-    const isValid = fields.forEach((field) => {
+    let allValid = true; /* Assume all fields are valid */
+
+    /* Validate each field */
+    fields.forEach((field) => {
         const element = form.querySelector(field.selector);
         if (!field.validate(element)) {
             showError(element, field.message);
-            return false;
+            allValid = false;
         }
-        return true;
     });
 
-    if (isValid) {
-        // Sending simulation
+    /* When the form is submitted */
+    if (allValid) {
         const formData = Object.fromEntries(new FormData(form).entries());
         console.log("Formulaire prêt à être envoyé :", formData); /* Console */
-
-        alert("Formulaire validé ! (Simulation d'envoi : Front-End)");
+        alert(
+            "Formulaire validé ! (Simulation d'envoi : Front-End)",
+        ); /* Sending simulation */
         form.reset();
     }
 });
 
+/* Reset error messages and hide them */
 function resetErrors() {
     form.querySelectorAll(".error-message").forEach((element) => {
         element.textContent = "";
@@ -71,17 +74,14 @@ function resetErrors() {
     });
 }
 
+/* Display the error message */
 function showError(input, message) {
     let errorSpan;
 
-    // Special case: RGPD checkbox has a different HTML structure
     if (input.type === "checkbox") {
         const consentBlock = input.closest(".consent");
-        // console.log(consentBlock);
         errorSpan = consentBlock.querySelector(".error-message");
-    }
-    // Standard fields: error message is the next sibling element
-    else {
+    } else {
         errorSpan = input.nextElementSibling;
     }
 

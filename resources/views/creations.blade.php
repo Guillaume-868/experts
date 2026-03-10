@@ -19,6 +19,19 @@
             <h1 class="title-primary">Créations</h1>
         </section>
 
+        <section class="content">
+            <h2 class="title-secondary">Feat skateshop</h2>
+            <p> Des créations faites à la main par un passionné de skateboard représentés par un côté fantaisie.</p>
+        </section>
+
+
+        <section class="skate-board" style="background-image: url('{{ asset('images/cloud.jpg') }}');">
+
+            <div class="skate-container">
+                <img src="{{ asset('images/skate-strange.png') }}" alt="skate-stranger" class="skate skate-top">
+                <img src="{{ asset('images/skate-vampire.png') }}" alt="skate-vampire" class="skate skate-down">
+            </div>
+        </section>
 
     </main>
     <x-footer></x-footer>
