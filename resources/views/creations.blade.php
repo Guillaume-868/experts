@@ -33,6 +33,17 @@
             </div>
         </section>
 
+        <section class="gallery" style="background-image: url('{{ asset('images/colors.jpg') }}');">
+            <div class="box-container">
+                <div class="gallery-container">
+                    <img src="{{ asset('images/eagle.png') }}" alt="eagle" class="t-shirt">
+                    <img src="{{ asset('images/tree.png') }}" alt="tree-spring" class="t-shirt">
+                    <img src="{{ asset('images/monkey.png') }}" alt="monkey" class="t-shirt">
+                    <img src="{{ asset('images/tree-second.png') }}" alt="tree-autumn" class="t-shirt">
+                </div>
+            </div>
+        </section>
+
     </main>
     <x-footer></x-footer>
 

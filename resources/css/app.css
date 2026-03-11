@@ -747,10 +747,10 @@ a.youtube:hover svg path {
     width: 100%;
     justify-content: center;
     padding: 5%;
-    background-image: url("/images/cloud.jpg");
     height: auto;
     background-size: cover;
     background-position: center;
+    margin-bottom: 10%;
 }
 
 .skate-container {
@@ -781,4 +781,49 @@ a.youtube:hover svg path {
 
 .skate-down:hover {
     transform: translateY(20px) scale(1.1) rotate(-3deg);
+}
+
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: 50% 40%;
+    background-size: cover;
+    padding: 5rem 0;
+    user-select: none;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15% 0;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.2) translateY(-20px);
+}
+
+/* Screen ≥ 768px */
+@media (min-width: 768px) {
+    .skate {
+        width: 100%;
+    }
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
