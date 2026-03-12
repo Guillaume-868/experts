@@ -33,12 +33,13 @@
     --color-black: #000000;
 
     /* Font sizes */
-    --font-size-sm: 1rem;
-    --font-size-base: 1.15rem;
-    --font-size-md: 1.5rem;
-    --font-size-lg: 2.25rem;
-    --font-size-xl: 4.5rem;
-    --font-size-hero: 8rem;
+    --font-size-sm: 0.9rem; /* 14px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-md: 1.5rem; /* 24px */
+    --font-size-lg: 1.75rem; /* 28px */
+    --font-size-xl: 3rem; /* 48px */
+    --font-size-xxl: 4rem; /* 64px */
+    --font-size-hero: 7rem; /* 112px */
 }
 
 /* ===================== */
@@ -86,6 +87,10 @@ body.menu-open {
 img {
     user-select: none;
     -webkit-user-drag: none;
+}
+
+p {
+    line-height: 1.6;
 }
 
 /* ===================== */
@@ -268,6 +273,8 @@ main {
     font-size: var(--font-size-base);
     margin: 0 auto 1.25rem auto;
     transition: font-size 0.4s ease-in-out;
+    text-wrap: balance;
+    max-width: 45ch;
 }
 
 /* Section Carousel */
@@ -480,14 +487,13 @@ a.youtube:hover svg path {
         margin-bottom: 10%;
     }
 
-    h2.title-secondary {
-        font-size: var(--font-size-lg);
-        transition: font-size 0.5s ease-in-out;
-    }
-
     .content {
         padding: 0.5% 2%;
         transition: padding 0.3s ease;
+    }
+
+    .content p {
+        font-size: var(--font-size-base);
     }
 
     .home-sections {
@@ -555,7 +561,7 @@ a.youtube:hover svg path {
     }
 
     .footer-copy {
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-base);
     }
 }
 
@@ -563,6 +569,14 @@ a.youtube:hover svg path {
 @media (min-width: 1024px) {
     header.home nav ul a {
         font-size: 3rem;
+    }
+
+    h2.title-secondary {
+        font-size: var(--font-size-xl);
+    }
+
+    .content p {
+        max-width: 60ch;
     }
 }
 
@@ -572,12 +586,15 @@ a.youtube:hover svg path {
         font-size: calc(var(--font-size-hero) * 2);
     }
     h2.title-secondary {
-        font-size: var(--font-size-xl);
-        transition: font-size 0.5s ease-in-out;
+        font-size: var(--font-size-xxl);
     }
+
+    .content {
+        padding: 1.5% 2.5%;
+    }
+
     .content p {
-        font-size: var(--font-size-md);
-        transition: font-size 0.5s ease-in-out;
+        font-size: var(--font-size-lg);
     }
     .carousel-dots .dot {
         padding: 1.25%;
@@ -592,6 +609,10 @@ a.youtube:hover svg path {
     .footer-social a svg {
         width: 3rem;
         height: 3rem;
+    }
+
+    .footer-copy {
+        font-size: var(--font-size-lg);
     }
 }
 
@@ -735,6 +756,17 @@ a.youtube:hover svg path {
     margin-bottom: 10%;
 }
 
+.content-skate {
+    width: 100%;
+    text-align: center;
+    padding: 4% 1.5%;
+    background-color: var(--color-secondary);
+    margin-bottom: 10%;
+    transition:
+        padding 0.3s ease,
+        font-size 0.4s ease-in-out;
+}
+
 .feat-skate p {
     font-size: var(--font-size-base);
     margin: 0 auto 1.25rem auto;
@@ -825,5 +857,19 @@ a.youtube:hover svg path {
     }
     .gallery-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Screen ≥ 1024px */
+@media (min-width: 1024px) {
+    .content-skate p {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Screen ≥ 1440px */
+@media (min-width: 1024px) {
+    .content-skate p {
+        font-size: var(--font-size-lg);
     }
 }

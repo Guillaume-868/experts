@@ -19,7 +19,7 @@
             <h1 class="title-primary">Créations</h1>
         </section>
 
-        <section class="content">
+        <section class="content-skate">
             <h2 class="title-secondary">Feat skateshop</h2>
             <p> Des créations faites à la main par un passionné de skateboard représentés par un côté fantaisie.</p>
         </section>

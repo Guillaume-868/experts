@@ -31,7 +31,7 @@
                     cadre
                     d'un projet qui pourrait s'appliquer sur de la broderie, un skateboard et d'autres supports.
                 </p>
-                <p> Autant dire que l'on a du pain sur la planche.
+                <p> Autant dire, que l'on a du pain sur la planche.
             </section>
 
 
