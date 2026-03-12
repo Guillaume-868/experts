@@ -36,7 +36,7 @@
 
                 <!-- Email -->
                 <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="o3-avenura@outlook.fr" required>
+                <input type="email" id="email" name="email" placeholder="o3-aventura@outlook.fr" required>
                 <span class="error-message"></span>
 
                 <!-- Subject -->

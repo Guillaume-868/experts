@@ -203,7 +203,7 @@ header.home nav a {
     color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: var(--font-size-md);
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -308,6 +308,7 @@ main {
     height: 100%;
     object-fit: cover;
     user-select: none;
+    transition: border-radius 0.3s ease;
 }
 
 .carousel-prev,
@@ -328,7 +329,7 @@ main {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 8%;
     gap: 5px;
     user-select: none;
 }
@@ -496,28 +497,6 @@ a.youtube:hover svg path {
         font-size: var(--font-size-base);
     }
 
-    .home-sections {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        align-items: stretch;
-        margin: 0 2%;
-    }
-
-    .home-sections .content,
-    .home-sections .carousel-wrapper {
-        width: 50%;
-        margin-bottom: 0;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition:
-            width 0.4s ease-in-out,
-            margin 0.3s ease,
-            border-radius 0.3s ease;
-    }
-
     .carousel-prev,
     .carousel-next {
         display: block;
@@ -532,16 +511,7 @@ a.youtube:hover svg path {
         right: 1rem;
     }
 
-    .carousel-slide img {
-        border-radius: 5%;
-        transition: border-radius 0.3s ease;
-    }
-
-    .carousel-dots {
-        margin-top: 1.5rem;
-    }
     .carousel-dots .dot {
-        padding: 3%;
         transition: padding 0.3s ease;
     }
 
@@ -568,7 +538,7 @@ a.youtube:hover svg path {
 /* Screen ≥ 1024px */
 @media (min-width: 1024px) {
     header.home nav ul a {
-        font-size: 3rem;
+        font-size: var(--font-size-lg);
     }
 
     h2.title-secondary {
@@ -577,6 +547,33 @@ a.youtube:hover svg path {
 
     .content p {
         max-width: 60ch;
+    }
+
+    .carousel-slide img {
+        margin-top: 10%;
+        border-radius: 10%;
+    }
+
+    .home-sections {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: stretch;
+        margin: 0 2%;
+    }
+
+    .home-sections .content,
+    .home-sections .carousel-wrapper {
+        width: 50%;
+        margin-bottom: 0;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition:
+            width 0.4s ease-in-out,
+            margin 0.3s ease,
+            border-radius 0.3s ease;
     }
 }
 
