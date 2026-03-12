@@ -27,7 +27,7 @@
                     déssins, les sujets sont libres, l'idée principale étant de laisser libre cours à l'imagination et à
                     la
                     créativité de chacun.</p>
-                <p> Il est possible de démontrer ses talents pour simplement faire plaisir ou encore déssiner dans le
+                <p> Il est possible de démontrer ses talents pour simplement faire plaisir ou encore dessiner dans le
                     cadre
                     d'un projet qui pourrait s'appliquer sur de la broderie, un skateboard et d'autres supports.
                 </p>

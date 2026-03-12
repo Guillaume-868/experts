@@ -203,7 +203,7 @@ header.home nav a {
     color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -474,6 +474,10 @@ a.youtube:hover svg path {
         padding-bottom: 2%;
     }
 
+    header.home nav ul a {
+        font-size: var(--font-size-lg);
+    }
+
     header.home nav a.active {
         background-color: transparent;
         color: var(--color-secondary);
@@ -537,10 +541,6 @@ a.youtube:hover svg path {
 
 /* Screen ≥ 1024px */
 @media (min-width: 1024px) {
-    header.home nav ul a {
-        font-size: var(--font-size-lg);
-    }
-
     h2.title-secondary {
         font-size: var(--font-size-xl);
     }
@@ -550,7 +550,6 @@ a.youtube:hover svg path {
     }
 
     .carousel-slide img {
-        margin-top: 10%;
         border-radius: 10%;
     }
 
@@ -849,6 +848,10 @@ a.youtube:hover svg path {
 
 /* Screen ≥ 768px */
 @media (min-width: 768px) {
+    .banner-creations {
+        background-position: 40% 45%;
+    }
+
     .skate {
         width: 100%;
     }
@@ -859,13 +862,20 @@ a.youtube:hover svg path {
 
 /* Screen ≥ 1024px */
 @media (min-width: 1024px) {
+    .banner-creations {
+        background-position: 40% 40%;
+    }
+
     .content-skate p {
         font-size: var(--font-size-base);
     }
 }
 
 /* Screen ≥ 1440px */
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
+    .banner-creations {
+        background-position: 40% 35.5%;
+    }
     .content-skate p {
         font-size: var(--font-size-lg);
     }
